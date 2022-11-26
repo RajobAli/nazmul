@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<html lang ="bn">
+
+<head>
+
+<style>
+body{
+background-color:green;
+
+}
+span{
+background-color:red;
+margin:5px;
+width:40px;
+padding:5px;
+color:white;
+font-style:bold;
+box-sizing:border-box;
+font-family:arial;
+font-size:1rem;
+}
+.j,.k{
+margin:3px;
+padding:5px;
+border:5px green solid;
+border-radius:15px;
+
+}
+span:hover{
+color:blue;
+background-color:white;
+}
+h3{
+color:white;
+text-style:bold;
+
+}
+h3:hover{
+color:blue;
+}
+.button:hover{
+color:hotpink;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+<h3>ট্রেন টাইম টেবিল</h3>
+<span>From</span>
+<input type="text" class="j">
+<span>To</span>
+<input type="text" class="k"><p></p>
+<button class="button">Show</button>
+<h1 class="result"></h1>
+<h2 class="resultt"></h2>
+<div class="div2"></div>
+
+
+<script>
+let input1 = document.querySelector('.j');
+let input2= document.querySelector('.k');
+let btn =document.querySelector('.button');
+let result = document.querySelector('.result');
+let rr = document.querySelector('.resultt');
+
+
+
+btn.addEventListener('click',()=>{
+let s1,s2;
+let p = input1.value.trim();
+let q = input2.value.trim();
+if(p =="নাটোর"){
+s1 = ["একতা","বাংলাবান্দা","বরেন্দ্র"];
+}else if(p=="আব্দুলপুর"){
+s1=["বাংলাবান্দা","বরেন্দ্র"];
+}
+else if(p=="রাজশাহী"){
+s1 =["বাংলাবান্দা","তিতুমির","বরেন্দ্র"];
+}
+
+if(q=="নাটোর"){
+s2=["একতা","বাংলাবান্দা","তিতুমির"];
+}
+else if(q=="রাজশাহী"){
+s2 =["বাংলাবান্দা","তিমুমির","বরেন্দ্র"];
+}
+else if(q=="আব্দুলপুর"){
+s2 = ["একতা","বাংলাবান্দা","বরেন্দ্র"];
+}
+
+let intersection = s1.filter((curElem)=>{
+return s2.includes(curElem);
+
+});
+rr.innerText=intersection;
+
+});
+
+
+
+</script>
+
+</body>
+
+</html>
